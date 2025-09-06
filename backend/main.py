@@ -72,6 +72,6 @@ async def process_file(file: UploadFile = None, text: str = Form(None)):
 if __name__ == "__main__":
     # Get port from environment variable (for deployment)
     port = int(os.getenv("PORT", 8000))
-    host = os.getenv("HOST", "127.0.0.1")
+    uvicorn.run(app, host="0.0.0.0", port=port)
     
     uvicorn.run(app, host=host, port=port)
