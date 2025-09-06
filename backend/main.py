@@ -2,8 +2,10 @@ from fastapi import FastAPI, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import requests
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
 app = FastAPI()
 
 # Allow React frontend
@@ -15,7 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyD0UfrmEb3WinMygUNxB271b-KXf15OfSk")
+
+GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + GEMINI_API_KEY
 
 

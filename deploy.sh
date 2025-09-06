@@ -29,3 +29,4 @@ echo "2. Update frontend API URL to point to your Render backend"
 echo "3. Test your deployed app!"
 echo ""
 echo "📖 See DEPLOYMENT.md for detailed instructions"
+
